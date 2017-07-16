@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="black">black</string>
+    <string name="purple">purple</string>
+    <string name="yellow">yellow</string>
+    <string name="green">green</string>
 </resources>

@@ -6,10 +6,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean questionThreeCorrect;
+
+    boolean onRadioButtonClicked;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,20 @@ public class MainActivity extends AppCompatActivity {
             scoreSummary = scoreSummary + "\nQuestion 2: Incorrect";
         }
 
+        if (isQuestionThreeCorrect()) {
+            scoreSummary = scoreSummary + "\nQuestion 3: Correct";
+        } else {
+            scoreSummary = scoreSummary + "\nQuestion 3: Incorrect";
+        }
+
+        if (isQuestionFourCorrect()) {
+            scoreSummary = scoreSummary + "\nQuestion 4: Correct";
+        } else {
+            scoreSummary = scoreSummary + "\nQuestion 4: Incorrect";
+        }
+
+
+
         return scoreSummary;
     }
 
@@ -53,14 +72,49 @@ public class MainActivity extends AppCompatActivity {
     public boolean isQuestionTwoCorrect() {
         EditText questionTwoEditText = (EditText) findViewById(R.id.question_two_edit_text);
 
-        Log.d()
-        Log.d(,questionTwoEditText.getText().toString());
-        if (questionTwoEditText.getText().toString() == "Black") {
+//        Log.d()
+//        Log.d(,questionTwoEditText.getText().toString());
+        if (questionTwoEditText.getText().toString().equals("Black")) {
             return true;
         } else {
             return false;
         }
 
+    }
+
+    public boolean isQuestionThreeCorrect() {
+        return questionThreeCorrect;
+    }
+
+    public boolean isQuestionFourCorrect() {
+        EditText questionFourEditText =(EditText) findViewById(R.id.question_four_edit_text);
+        if (questionFourEditText.getText().toString().equals("Brown")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.question_three_answer_black:
+                if (checked)
+                    questionThreeCorrect = false;
+                // Pirates are the best
+                    break;
+            case R.id.question_three_answer_green:
+                if (checked)
+                    questionThreeCorrect = false;
+                    break;
+            case R.id.question_three_answer_purple:
+                if (checked)
+                    questionThreeCorrect = true;
+                break;
+        }
     }
 
     public void displayScoreSummary(String summary) {
