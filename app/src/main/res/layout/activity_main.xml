@@ -68,7 +68,6 @@
             android:id="@+id/question_two_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/question_two"
             android:inputType="text" />
 
         <TextView
@@ -131,7 +130,6 @@
             android:id="@+id/question_four_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/question_four"
             android:inputType="text" />
 
         <Button
