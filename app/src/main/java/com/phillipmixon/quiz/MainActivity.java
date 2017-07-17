@@ -1,13 +1,11 @@
 package com.phillipmixon.quiz;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     boolean questionThreeCorrect;
 
     boolean onRadioButtonClicked;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
             scoreSummary = scoreSummary + "\nQuestion 4: Incorrect";
         }
 
-
-
         return scoreSummary;
     }
 
@@ -66,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             return false;
         }
-
     }
 
     public boolean isQuestionTwoCorrect() {
@@ -74,12 +70,11 @@ public class MainActivity extends AppCompatActivity {
 
 //        Log.d()
 //        Log.d(,questionTwoEditText.getText().toString());
-        if (questionTwoEditText.getText().toString().equals("Black")) {
+        if (questionTwoEditText.getText().toString().toLowerCase().equals("black")) {
             return true;
         } else {
             return false;
         }
-
     }
 
     public boolean isQuestionThreeCorrect() {
@@ -87,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean isQuestionFourCorrect() {
-        EditText questionFourEditText =(EditText) findViewById(R.id.question_four_edit_text);
-        if (questionFourEditText.getText().toString().equals("Brown")) {
+        EditText questionFourEditText = (EditText) findViewById(R.id.question_four_edit_text);
+        if (questionFourEditText.getText().toString().toLowerCase().equals("brown")) {
             return true;
         } else {
             return false;
@@ -100,16 +95,16 @@ public class MainActivity extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.question_three_answer_black:
                 if (checked)
                     questionThreeCorrect = false;
                 // Pirates are the best
-                    break;
+                break;
             case R.id.question_three_answer_green:
                 if (checked)
                     questionThreeCorrect = false;
-                    break;
+                break;
             case R.id.question_three_answer_purple:
                 if (checked)
                     questionThreeCorrect = true;

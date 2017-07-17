@@ -21,33 +21,33 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"
-            android:text="Question 1:"
+            android:text="@string/question_one_heading"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What colors are considered light?" />
+            android:text="@string/question_one" />
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/question_one_brown_answer"
-            android:text="Brown" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/brown" />
+
+        <CheckBox
             android:id="@+id/question_one_yellow_answer"
-            android:text="Yellow" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yellow" />
 
 
         <CheckBox
+            android:id="@+id/question_one_white_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/question_one_white_answer"
-            android:text="White" />
+            android:text="@string/white" />
 
 
         <TextView
@@ -55,55 +55,59 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"
-            android:text="Question 2:"
+            android:text="@string/question_two_heading"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What color is opposite of white??" />
+            android:text="@string/question_two" />
 
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/question_two_edit_text"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/question_two"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"
-            android:text="Question 3:"
+            android:text="@string/question_three_heading"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What color does yellow and red make?" />
+            android:text="@string/question_three" />
 
         <RadioGroup
+            android:id="@+id/question_three_radio_group"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/question_three_radio_group">
+            android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/question_three_answer_purple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/question_three_answer_purple"
                 android:onClick="onRadioButtonClicked"
                 android:text="@string/purple" />
+
             <RadioButton
+                android:id="@+id/question_three_answer_black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/question_three_answer_black"
                 android:onClick="onRadioButtonClicked"
                 android:text="@string/black" />
+
             <RadioButton
+                android:id="@+id/question_three_answer_green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/question_three_answer_green"
                 android:onClick="onRadioButtonClicked"
                 android:text="@string/green" />
         </RadioGroup>
@@ -113,7 +117,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"
-            android:text="Question 4:"
+            android:text="@string/question_four_heading"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -121,12 +125,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What color starts with B and ends with N??" />
+            android:text="@string/question_four" />
 
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/question_four_edit_text"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/question_four"
+            android:inputType="text" />
 
         <Button
             android:layout_width="wrap_content"
@@ -134,21 +140,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="submitAnswers"
-            android:text="Submit Answers" />
+            android:text="@string/submit_answers" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"
-            android:text="Results:"
+            android:text="@string/results"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/total_score_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/total_score_text_view" />
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
